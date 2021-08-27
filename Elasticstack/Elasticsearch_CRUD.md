@@ -1,3 +1,5 @@
+
+
 # Elasticsearch CRUD
 
 ## 1. 클러스터 탐색
@@ -45,4 +47,71 @@ GET/_cat/indices?v
 
 - 갖고 있는 모든 인덱스 항목 조회
 - Index는 일반 RDB에서의 데이터베이스의 역할
+
+
+
+## 4. Elasitcsearch CRUD
+
+### 1. Http 메서드와 CRUD, SQL 비교
+
+| Http 메서드 |  CRUD  |  SQL   |
+| :---------: | :----: | :----: |
+|     GET     |  Read  | Select |
+|     PUT     | Create | Insert |
+|    POST     | Update | Update |
+|   DELETE    | Delete | Delete |
+
+### 2. 엘라스틱서치 데이터 처리
+
+- 엘라스틱서치의 데이터 구조
+  - 인덱스, 타입, 도큐먼트의 단위를 가짐
+  - 도큐먼트는 엘라스틱서치의 데이터가 저장되는 최소 단위
+  - 여러개의 도큐먼트는 하나의 타입
+  - 다시 여러개의 타입은 하나의 인덱스로 구성
+
+| RDBMS                   | Elasticsearch  |
+| ----------------------- | -------------- |
+| 데이터베이스 (Database) | 인덱스 (Index) |
+| 테이블 (Table)          | 타입 (Type)    |
+| 열 (Row)                | 필드 (Field)   |
+| 스키마                  | 매핑 (Mapping) |
+
+
+
+### 3. 데이터 업데이트
+
+- age를 123으로 변경
+
+```java
+POST customer/type1/1
+{
+  "doc":{
+    "age" : 123"
+  }
+}
+```
+
+or
+
+```java
+POST customer/type1/1/_update
+{
+  "doc":{
+    "age" : 123"
+  }
+}
+```
+
+
+
+- script의 cox.op 명령을 사용하여 필드 조건에 따라 도큐먼트 삭제
+
+```java
+POST customer/type1/1/_update
+{
+  "script":{
+    "inline" : "if(ctx._source.age==123){ctx._source.age++}"
+  }
+}
+```
 
