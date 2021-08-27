@@ -105,5 +105,5 @@ docker ps
 
 - localhost:5601
 
-![kibana_home](./img/kibana_home.png)
+![kibana_home](../img/kibana_home.png)
 
