@@ -2,7 +2,17 @@
 
 # Elasticsearch 개요
 
-## 1. Elasitcsearch의 핵심 개념
+## 1. Elastichsearch 소개
+
+- 확장성이 뛰어난 오픈소스 전체 텍스트 검색 및 분석 엔진
+
+- 대량의 데이터를 신속하고 거의 실시간으로 저장, 검색 및 분석
+
+- 일반적으로 복잡한 검색 기능과 요구 사항이 있는 응용 프로그램을 구동하는 기본 엔진 / 기술
+
+  
+
+## 2. Elasitcsearch의 핵심 개념
 
 - `클러스터 (Cluster)`
   - 전체 데이터를 함께 보유하고 모든 노드에서 연합 인덱싱 및 검색기능을 제공하는 하나 이상의 노드 (서버) 모음
@@ -26,9 +36,11 @@
 
 
 
+---
 
 
-## 2. Elasticsearch + Cabana 다운로드 (Docker)
+
+## 3. Elasticsearch + Cabana 다운로드 (Docker)
 
 ### 1. Elasticsearch 설치
 
@@ -109,4 +121,10 @@ docker ps
 - localhost:5601
 
 ![kibana_home](../img/kibana_home.png)
+
+
+
+
+
+
 
