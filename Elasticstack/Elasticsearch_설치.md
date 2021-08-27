@@ -1,5 +1,5 @@
 # Elasticsearch 개요
-### Elasitcsearch의 핵심 개념
+### 1. Elasitcsearch의 핵심 개념
 
 <table>
 |---|:---:|
