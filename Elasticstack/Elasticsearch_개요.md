@@ -2,7 +2,7 @@
 
 # Elasticsearch 개요
 
-### 1. Elasitcsearch의 핵심 개념
+## 1. Elasitcsearch의 핵심 개념
 
 - `클러스터 (Cluster)`
   - 전체 데이터를 함께 보유하고 모든 노드에서 연합 인덱싱 및 검색기능을 제공하는 하나 이상의 노드 (서버) 모음
@@ -23,9 +23,11 @@
 
 
 
-### 2. Elasticsearch + Cabana 다운로드 (Docker)
 
-##### 1. Elasticsearch 설치
+
+## 2. Elasticsearch + Cabana 다운로드 (Docker)
+
+### 1. Elasticsearch 설치
 
 - elasticsearch dock 이미지 가져오기
 
@@ -75,7 +77,7 @@ docker ps
 
 
 
-##### 2. kibana 설치
+### 2. kibana 설치
 
 - Kibana docker 이미지 가져오기
 
@@ -102,3 +104,6 @@ docker ps
 
 
 - localhost:5601
+
+![kibana_home](./img/kibana_home.png)
+
