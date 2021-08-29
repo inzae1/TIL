@@ -78,7 +78,26 @@ GET/_cat/indices?v
 
 
 
-### 3. 데이터 업데이트
+
+
+### 3. 데이터 입력 (PUT)
+
+- age : 123 데이터를 put
+
+```java
+PUT customer/type1/1
+{
+  "doc":{
+    "age" : 123"
+  }
+}
+```
+
+PUT <인덱스>/<도큐먼트 타입>/<도큐먼트 id>/_create
+
+
+
+### 4. 데이터 수정 (POST)
 
 - age를 123으로 변경
 
@@ -115,3 +134,26 @@ POST customer/type1/1/_update
 }
 ```
 
+
+
+### 5. 데이터 조회 (GET)
+
+```java
+GET customer/type1/1
+```
+
+- 내용은 _source 항목에 나타남
+
+
+
+### 6. 데이터 삭제 (DELETE)
+
+```java
+DELETE customer/type1/1
+```
+
+```java
+GET customer/type1/1
+```
+
+- 삭제된 인덱스를 조회할 시 `"acknowledged" : true` 응답만 리턴됨.
