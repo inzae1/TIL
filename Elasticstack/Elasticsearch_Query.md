@@ -136,3 +136,9 @@ GET my_index/_search
 
 - 도큐먼트 내에 검색된 **텀(term)**이 더 많을수록 점수가 높아지는 것을 **Term Frequency** 라고 함
 
+
+
+### 3. IDF (Inverse Document Frequency)
+
+- 검색한 텀을 포함하고 있는 도큐먼트 개수가 많을수록 그 텀의 자신의 점수가 감소하는 것을 __Inverse Document Frequency__ 라고 함
+
