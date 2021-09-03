@@ -142,3 +142,32 @@ GET my_index/_search
 
 - 검색한 텀을 포함하고 있는 도큐먼트 개수가 많을수록 그 텀의 자신의 점수가 감소하는 것을 __Inverse Document Frequency__ 라고 함
 
+
+
+## 4. Query DSL
+
+###  size, from
+
+- __size__ : 몇개의 value가 나오는 지 설정하는 옵션
+
+  __size__가 지정되지 않으면 기본값은 10임
+
+- __from__ : 어떤 색인에서 시작할지 설정하는 옵션
+
+  __from__이 지정되지 않으면 기본값은 10임
+
+```java
+GET cuustomer/_search
+{
+  "query":{
+    "match_all":{},
+    "size": 1000,
+    "from": 1000
+  }
+}
+```
+
+
+
+## 5. FIlter
+
