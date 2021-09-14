@@ -1,9 +1,9 @@
 # Today I Learned (TIL) 
 
-<br>
-
 - 더 나은 개발자가 되기위해 그날그날 배운 것은 기록한다.
 - 파일명은 영어로 카테고리는 보기편하도록 작성한다.
+
+<br>
 
 ## Contents
 
@@ -17,7 +17,7 @@
 
 - [Elasticsearch Query](./Elasticstack/04_Elasticsearch_query.md)
 
-  
+<br>
 
 ### Google Drive (Python)
 
