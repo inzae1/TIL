@@ -32,7 +32,7 @@ drive = GoogleDrive(gauth)
 
 ### 3. Google Drive 에 파일 업로드
 
-- `'id'`에는 구글드라이브 url의  https://drive.google.com/drive/u/0/folders/ <id> 값을 넣어준다
+- `'id'`에는 구글드라이브 url의  https://drive.google.com/drive/u/0/folders/ 뒤에 있는 임의의 값을 넣어준다
 
 ```python
 upload_file_list = ['1.jpg', '2.jpg']
