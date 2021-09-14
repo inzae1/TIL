@@ -17,8 +17,6 @@
 
 - [Elasticsearch Query](./Elasticstack/04_Elasticsearch_query.md)
 
-<br>
-
 ### Google Drive (Python)
 
 - [Google Drive Library 설치](./Google-Drive/01_Google_drive_library_installation.md)
