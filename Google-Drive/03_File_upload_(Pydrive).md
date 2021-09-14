@@ -45,5 +45,5 @@ for upload_file in upload_file_list:
 
 - 출력결과
 
-![google-drive1](/Users/inzae/Documents/TIL-inzae/img/googledrive1.jpeg)
+![google-drive1](../img/googledrive1.jpeg)
 
