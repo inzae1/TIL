@@ -8,11 +8,8 @@
 ### Elastic Stack
 
 - [Elasticsearch 개요](./Elasticstack/01_Elasticsearch_intro.md)
-
 - [Elasticsearch CRUD](./Elasticstack/02_Elasticsearch_CRUD.md)
-
 - [Elasticsearch API](./Elasticstack/03_Elasticsearch_API.md)
-
 - [Elasticsearch Query](./Elasticstack/04_Elasticsearch_query.md)
 
 ### Google Drive (Python)
