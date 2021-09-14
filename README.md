@@ -15,5 +15,5 @@
 ### Google Drive (Python)
 
 - [Google Drive Library 설치](./Google-Drive/01_Google_drive_library_installation.md)
-- [File Upload (Pydrive)](./Google-Drive/03_File_upload_(Pydrive).md)
+- [File Upload (Pydrive)](./Google-Drive/02_File_upload_(Pydrive).md)
 
