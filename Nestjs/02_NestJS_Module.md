@@ -20,7 +20,8 @@ nest g module boards
 방금 생성된 boardModule을 사용하기 위해서는 루트 모듈인 app.module.ts 에 등록해주어야 한다.
 -> board 모듈을 생성할때 자동으로 등록되기 때문에 신경 안써도 된다.
 
-```javascript
+```typescript
+// board.module.ts
 import { Module } from '@nestjs/common';
 import { BoardsModule } from './boards/boards.module';
 
