@@ -25,3 +25,4 @@
 - [NestJS Controller](./Nestjs/03_NestJS_Controller.md)
 - [NestJS Provider](./Nestjs/04_NestJS_Provider.md)
 - [NestJS Service](./Nestjs/05_NestJS_Service.md)
+- [NestJS Entity](./Nestjs/06_NestJS_Entity.md)
