@@ -29,4 +29,4 @@
 
 ### Jest
 - [Jest 개요](./Jest/01_Jest_intro.md)
-- 
+- [Jest 설정](./Jest/02_Jest_setting.md)
