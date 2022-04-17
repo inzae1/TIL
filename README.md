@@ -31,3 +31,4 @@
 - [Jest 개요](./Jest/01_Jest_intro.md)
 - [Jest 설정](./Jest/02_Jest_setting.md)
 - [Jest Mocking](./Jest/03_Jest_mocking.md)
+- [Jest Mock function I](./Jest/04_Jest_mocking2.md)
