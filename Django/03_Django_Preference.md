@@ -180,3 +180,78 @@ or
 - `DIRS` 는 Django가 템플릿 소스 파일을 찾아야 하는 디렉터리 경로이다.
 - `APP_DIRS` 은 Django 가 설치된 애플리케이션에서 템플릿 소스 파일을 찾는 여부이다.
 - `OPTION` 는 템플릿 백엔드에 전달할 추가 매개 변수이다. 사용 가능한 매개 변수는 템플릿 백엔드에 따라 달라진다.
+
+<br>
+
+### **WSGI 배포**
+```python
+WSGI_APPLICATION = 'daehee.wsgi.application'
+```
+- 현재 프로젝트를 서비스하기 위해 WSGI(Web Server Gateway Interface) 의 경로를 의미한다.
+- 환경변수가 설정되지 않으면 프로젝트를 생성할 때 제공되는 wsgi.py 의 설정값을 사용한다.
+
+<br>
+
+### **데이터베이스 설정**
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+```
+- 기본값으로 SQLite 가 설정되어 있으며, 특정 데이터베이스를 연동할 때 `DATABASES` 설정값을 변경한다.
+- `ENGINE` 은 데이터베이스의 엔진을 의미하며, MySQL 이나 PostgreSQL 등을 연동할 수 있다.
+
+
+#### 로컬 데이터베이스 연동
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': db_host,
+        'PORT': db_port,
+        'NAME': db_name,
+        'USER': db_user,
+        'PASSWORD': db_password,
+    }
+}
+```
+
+#### 클라우드 데이터베이스 연동
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': aws.076923.ap-northeast-2.rds.amazonaws.com,
+        'PORT': 5432,
+        'NAME': db_name,
+        'USER': db_user,
+        'PASSWORD': db_password,
+    }
+}
+```
+
+<br>
+
+### **비밀번호 유효성 검사**
+```python
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+```
+
+
+
