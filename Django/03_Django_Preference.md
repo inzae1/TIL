@@ -2,9 +2,9 @@
 
 # Django 환경설정
 
-### **Django setting.py 설정**
+## **Django setting.py 설정**
 
-#### **기본 디렉토리 경로**
+### **기본 디렉토리 경로**
 ```python
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ```
@@ -13,7 +13,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 <br>
 
-#### **비밀 키**
+### **비밀 키**
 ```python
 SECRET_KEY = '비밀 키'
 ```
@@ -23,7 +23,7 @@ SECRET_KEY = '비밀 키'
 
 <br>
 
-#### **디버그**
+### **디버그**
 ```python
 DEBUG = True
 ```
@@ -31,7 +31,7 @@ DEBUG = True
 
 <br>
 
-#### **허용 가능한 호스트**
+### **허용 가능한 호스트**
 ```python
 ALLOWED_HOSTS = []
 ```
@@ -48,7 +48,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '168.92.0.381']
 
 <br>
 
-#### **설치된 애플리케이션**
+### **설치된 애플리케이션**
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -67,8 +67,7 @@ INSTALLED_APPS = [
 
 <br>
 
-#### **CORS 허용**
-
+### **CORS 허용**
 ```python
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = False
@@ -109,8 +108,7 @@ CORS_ORIGIN_WHITELIST = (
 
 <br>
 
-#### **미들웨어**
-
+### **미들웨어**
 ```python
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,7 +141,7 @@ MIDDLEWARE = [
 
 <br>
 
-#### **루트 URL**
+### **루트 URL**
 
 ```python
 ROOT_URLCONF = 'project-name.urls'
@@ -153,7 +151,7 @@ ROOT_URLCONF = 'project-name.urls'
 
 <br>
 
-#### **템플릿**
+### **템플릿**
 
 ```python
 TEMPLATES = [
