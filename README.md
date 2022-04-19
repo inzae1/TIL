@@ -20,7 +20,8 @@
 
 ### Django
 - [Django 시작하기](./Django/01_Django_Intro.md)
-- [Django 프로젝트 설정](./Django/02_Django_Preference.md)
+- [Django setting.py](./Django/02_Django_setting.md)
+- [Django 프로젝트 설정](./Django/03_Django_Preference.md)
 
 
 ### NestJS
