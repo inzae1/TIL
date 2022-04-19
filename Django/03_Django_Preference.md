@@ -252,6 +252,34 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 ```
+- 사용자 비밀번호의 강도를 확인하는 데 사용되는 유효성 검증기 목록이다.
+- `UserAttributeSimilarityValidator` 는 사용자의 아이디나 이메일의 속성이 비밀번호와 유사한지 확인한다.
+- `MinimumLengthValidator` 는 비밀번호의 최소 길이를 확인한다.
+- `CommonPasswordValidator` 는 비밀번호가 흔한 문자열인지 확인한다.
+- `NumericPasswordValidator` 는 비밀번호가 숫자로만 구성되어있는지 확인한다.
 
+<br>
 
+### **다국어 및 지역 시간 설정**
+
+```python
+LANGUAGE_CODE = 'ko-kr'
+
+TIME_ZONE = 'Asia/Seoul'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+```
+- `LANGUAGE_CODE` 는 Django project 에서 사용되는 국가를 설정한다.
+- `TIME_ZONE` 은 데이터베이스의 시간대를 설정하는 문자열이다.
+- `USE_I18N` 은 Django 의 번역 시스템 활성화 여부를 설정한다.
+- `USE_L10N` 은 현지화 된 데이터 형식의 사용 여부를 설정한다.
+- `USER_TZ` 은 장고가 시간대를 인식하는 여부를 설정한다.
+  - `I18N` 은 국제화(Internationalization)의 약어이다.
+  - `L10N` 은 지역화(Localization)의 약어이다.
+
+<br>
 
