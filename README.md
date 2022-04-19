@@ -19,7 +19,8 @@
 - [구글드라이브에 폴더만들기 (Pydrive)](./Google-Drive/03_Create_folder_(Pydrive).md)
 
 ### Django
-- [Django 시작하기](./Django/01_Django_intro.md)
+- [Django 시작하기](./Django/01_Django_Intro.md)
+- [Django 프로젝트 설정](./Django/02_Django_Preference.md)
 
 
 ### NestJS

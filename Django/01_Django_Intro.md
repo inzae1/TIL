@@ -1,6 +1,6 @@
 
 
-# Django 소개
+# Django 시작하기
 
 ### **Django 란?** 
 
