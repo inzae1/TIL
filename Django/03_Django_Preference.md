@@ -283,3 +283,14 @@ USE_TZ = True
 
 <br>
 
+### **정적 파일 경로 변경**
+```python
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+```
+- 로컬 경로의 정적 파일을 사용한다면, 위와 같이 변경해 사용할 수 있다.
+- `STATICFILES_DIRS` 는 정적 파일이 위치한 경로 목록을 설정한다.
+
