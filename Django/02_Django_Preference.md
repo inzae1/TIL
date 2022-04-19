@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'daehee.urls'
+ROOT_URLCONF = 'project-name.urls'
 
 TEMPLATES = [
     {
@@ -154,6 +154,8 @@ DEBUG = True
 ```
 - `True` 일 때는 디버그 모드로 들어갈 수 있다.
 
+<br>
+
 ### **허용 가능한 호스트**
 ```python
 ALLOWED_HOSTS = []
@@ -162,10 +164,14 @@ ALLOWED_HOSTS = []
 - 해당 기능은 CSRF(Cross-site request forgery) 와 HTTP 웹 서버 헤더 공격을 막기 위한 조치이다.
 - `DEBUG = True` 일 때 동작하며, 기본적으로 `localhost`, `127.0.0.1` 는 등록해 사용한다.
 
+<br>
+
 ```python
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '168.92.0.381']
 ```
 - 모든 호스트를 허용한다면 `ALLOWED_HOSTS = ['*']` 으로 설정한다.
+
+<br>
 
 ### **설치된 애플리케이션**
 ```python
@@ -183,3 +189,121 @@ INSTALLED_APPS = [
 ```
 - 현재 Django project 에 설치된 애플리케이션의 목록을 의미한다.
 - 애플리케이션을 등록하지 않는다면 서비스에서 사용할 수 없다.
+
+<br>
+
+### **CORS 허용**
+
+```python
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = False
+ 
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+ 
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    '허용할 메서드',
+)
+     
+CORS_ORIGIN_WHITELIST = (
+    '허용할 URL',
+)
+```
+- CORS 를 설정 했다면 위와 같은 내용을 추가한다.
+- `CORS_ORIGIN_ALLOW_ALL` 은 모든 사이트들의 HTTP 요청을 가능하게한다. 개발 중에는 `True` 로 사용한다.
+- 서비스 중인 서버에서는 `False` 로 사용하고, `CORS_ORIGIN_WHITELIST` 를 설정한다.
+- `CORS_ALLOW_CREDENTIALS` 은 쿠키가 사이트 간 HTTP 요청에 포함 허용 여부를 설정한다.
+- `CORS_ALLOW_HEADERS` 는 Access-Control-Allow-Headers 를 포함하는 예비 요청(preflight request) 응답에 사용되는 헤더를 설정한다.
+- `CORS_ALLOW_METHODS` 는 사용 가능한 HTTP 메서드를 설정한다.
+- `CORS_ORIGIN_WHITELIST` 는 사이트 간 요청을 허용하는 호스트 목록을 의미한다.
+
+<br>
+
+### **미들웨어**
+
+```python
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+```
+- 미들웨어(middleware)란 운영 체제와 응용 소프트웨어 중간에서 조정과 중개의 역할을 수행하는 소프트웨어이다.
+- 데이터, 애플리케이션 서비스, 인증, API 를 관리한다.
+- Django 의 미들웨어는 Django 에서 발생하는 요청 및 응답 처리에 연결되는 프레임워크이다.
+
+```python
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+```
+- Django 에서 CORS 를 허용하기 위해서는 목록의 가장 최상단에 CORS 미들웨어를 등록해야 한다.
+- 추가적으로 등록되는 미들웨어는 하단에 등록해도 무방하다.
+
+<br>
+
+### **루트 URL**
+
+```python
+ROOT_URLCONF = 'project-name.urls'
+```
+- 루트 URL 설정에 대한 Python 경로를 나타내는 문자열이다.
+- 루트 URL 경로 설정으로 Django project 의 URL 설정값을 가져와 등록한다.
+
+<br>
+
+### **템플릿**
+
+```python
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
+- Django 는 웹사이트에서 활용할 수 있으므로 html 코드 등과 연동하여 사용할 수 있다.
+- `BACKEND` 는 사용할 템플릿 백엔드를 설정한다. 아래와 같이 템플릿을 변경 해 사용할 수 있다.
+```python
+‘BACKEND’: ‘django.template.backends.django.DjangoTemplates’
+or
+‘BACKEND’: ‘django.template.backends.jinja2.Jinja2’
+```
+- `DIRS` 는 Django가 템플릿 소스 파일을 찾아야 하는 디렉터리 경로이다.
+- `APP_DIRS` 은 Django 가 설치된 애플리케이션에서 템플릿 소스 파일을 찾는 여부이다.
+- `OPTION` 는 템플릿 백엔드에 전달할 추가 매개 변수이다. 사용 가능한 매개 변수는 템플릿 백엔드에 따라 달라진다.
