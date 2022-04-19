@@ -9,7 +9,7 @@
 - `setting.py` 파일의 설정이 올바르지 않거나, 필요한 구성이 누락되었다면 정상적으로 실행되지 않는다.
 - 기본적인 설정 파일의 구성은 아래와 같다.
 
-```django
+```python
 """
 Django settings for daehee project.
 
@@ -132,3 +132,54 @@ USE_TZ = True
 STATIC_URL = '/static/'
 ```
 
+### **기본 디렉토리 경로**
+```python
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+```
+- 기본 디렉토리 경로는 `BASE_DIR` 로 나타낸다.
+- `BASE_DIR` 은 임의적으로 디렉토리 경로를 수정한 경우가 아니라면 수정하지 않는다.
+
+
+### **비밀 키**
+```python
+SECRET_KEY = '비밀 키'
+```
+- `SECRET_KEY` 는 무작위의 50글자로 구성되어 있으며, 쿠키데이터 해시, 암호화 서명, 일회성 비밀 URL 생성 등에 사용된다.
+- `SECRET_KEY` 는 노출되어서는 안되며, 노출되었을 때는 보안기능이 상실되므로 새로운 `SECRET_KEY` 를 사용해야 한다.
+- `SECRET_KEY` 의 값은 분리해서 사용하며, 크게 환경 변수에 등록하거나 비밀 파일로 저장해 사용한다.
+
+### **디버그**
+```python
+DEBUG = True
+```
+- `True` 일 때는 디버그 모드로 들어갈 수 있다.
+
+### **허용 가능한 호스트**
+```python
+ALLOWED_HOSTS = []
+```
+- 허용 가능한 호스트는 운영 서버 등에 배포하여, 서비스할 때 호스트로 사용 가능한 호스트 또는 도메인 목록이다.
+- 해당 기능은 CSRF(Cross-site request forgery) 와 HTTP 웹 서버 헤더 공격을 막기 위한 조치이다.
+- `DEBUG = True` 일 때 동작하며, 기본적으로 `localhost`, `127.0.0.1` 는 등록해 사용한다.
+
+```python
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '168.92.0.381']
+```
+- 모든 호스트를 허용한다면 `ALLOWED_HOSTS = ['*']` 으로 설정한다.
+
+### **설치된 애플리케이션**
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    '앞으로 추가할 애플리케이션',
+]
+```
+- 현재 Django project 에 설치된 애플리케이션의 목록을 의미한다.
+- 애플리케이션을 등록하지 않는다면 서비스에서 사용할 수 없다.
